@@ -1,1 +1,0 @@
-import "./MutltipleCom.css";

@@ -1,17 +1,43 @@
-import Expenseitem from './Component/Expenseitem'
+import Table from "./Component/Table";
 
 function App(){
-    let expensedate= new Date(2020, 3 ,19);
-    let expensetitle= 'fee';
-    let expenseamount = 300;
 
+    let today = new Date().toISOString().slice(0, 10);
+    let data=[
+        {
+                id: "en-1",
+                title: "school fee",
+                amount: 250,
+                date: today,
+                dues:"paid"
+              
+        },
+        {
+            id: "en-2",
+            title: " fee",
+            amount: 50,
+            date: today,
+            dues:"unpaid"
+          
+    },
+    
+
+    ];
     return(
         <div>
-            <Expenseitem 
-            date={expensedate}
-            title={expensetitle}
-            amount={expenseamount}
-            />
+           <Table
+           title={data[0].title}
+           fee={data[0].amount}
+           today={data[0].date}
+           dues={data[0].dues}
+           /> 
+           <Table
+           title={data[1].title}
+           fee={data[1].amount}
+           today={data[1].date}
+           dues={data[1].dues}
+           /> 
+           
         </div>
     );
 }
